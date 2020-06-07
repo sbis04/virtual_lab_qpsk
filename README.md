@@ -4,7 +4,7 @@ This is a Virtual Laboratory where students can perform various **Quadrature Pha
 
 ## Screenshots
 
-<h4>Sign In & Sign Up Dialog Boxes</h4>
+<h4 align="center">Sign In & Sign Up Dialog Boxes</h4>
 <p align="center">
   <img width=400 src="https://github.com/sbis04/virtual_lab_qpsk/raw/master/screenshots/sign_in.png" alt="Sign In" /> 
   <img width=400 src="https://github.com/sbis04/virtual_lab_qpsk/raw/master/screenshots/sign_up.png" alt="Sign Up" />
