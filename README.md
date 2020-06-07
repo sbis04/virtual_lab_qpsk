@@ -2,6 +2,31 @@
 
 This is a Virtual Laboratory where students can perform various **Quadrature Phase Shift Keying (QPSK)** Wave Modulation experiments.
 
+## Screenshots
+
+<h4>Sign In & Sign Up Dialog Boxes</h4>
+<p align="center">
+  <img width=400 src="https://github.com/sbis04/virtual_lab_qpsk/raw/master/screenshots/sign_in.png" alt="Sign In" /> 
+  <img width=400 src="https://github.com/sbis04/virtual_lab_qpsk/raw/master/screenshots/sign_up.png" alt="Sign Up" />
+</p>
+
+<h4 align="center">QPSK Modulated Waveform</h4>
+<p align="center">
+  <img src="https://github.com/sbis04/virtual_lab_qpsk/raw/master/screenshots/modulated.png" alt="Modulated Waveform" />
+</p>
+
+<h4 align="center">QPSK Demodulated Waveform</h4>
+<p align="center">
+  <img src="https://github.com/sbis04/virtual_lab_qpsk/raw/master/screenshots/demodulated.png" alt="Demodulated Waveform" />
+</p>
+
+<h4 align="center">Report</h4>
+<p align="center">
+  <img width=400 src="https://github.com/sbis04/virtual_lab_qpsk/raw/master/screenshots/report_1.png" alt="Report Page 1" />
+  <img width=400 src="https://github.com/sbis04/virtual_lab_qpsk/raw/master/screenshots/report_2.png" alt="Report Page 2" />
+</p>
+
+
 ## Inputs
 
 1. Digital data stream (Message Signal)
