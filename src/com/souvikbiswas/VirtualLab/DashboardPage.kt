@@ -102,14 +102,6 @@ class DashboardPage {
         // For Displaying waves
         wavePanel!!.background = Color.white
 
-        // messageWave.setBorder(new EmptyBorder(0, 10, 0, 10));
-        // carrierWave.setBorder(new EmptyBorder(0, 10, 0, 10));
-        // qpskWave.setBorder(new EmptyBorder(0, 10, 0, 10));
-
-        // wavePanel.add(messageWave);
-        // wavePanel.add(carrierWave);
-        // wavePanel.add(qpskWave);
-
         // For the controller gui
         dataPanel!!.layout = GridLayout(2, 1)
         dataPanel!!.add(dataLabel)
@@ -158,9 +150,6 @@ class DashboardPage {
             wavePanel!!.removeAll()
             wavePanel!!.revalidate()
             wavePanel!!.repaint()
-
-//            SQLUtil sqlUtil = new SQLUtil();
-//            sqlUtil.deleteTable();
         }
     }
 
@@ -206,14 +195,6 @@ class DashboardPage {
             val currentAmplitude = amplitudeField!!.text.toInt()
             val isBinary = Pattern.matches("[0-1]+", currentBinaryString)
             if (isBinary) {
-
-//                SQLUtil sqlUtil = new SQLUtil();
-//                sqlUtil.createDetailTable();
-//
-//                Date date = new Date();
-//                String dateString = date.toString();
-//
-//                sqlUtil.insertRowDetail(dateString, );
                 dataStream.message = currentBinaryString
                 splitMessage()
                 messageWave = MessageDraw(dataStream)

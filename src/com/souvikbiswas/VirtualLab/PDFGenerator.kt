@@ -10,11 +10,14 @@ class PDFGenerator {
     fun createPDF() {
         try {
             val document = Document()
+
             PdfWriter.getInstance(document, FileOutputStream(FILE))
+
             document.open()
+
             addMetaData(document)
             addTitlePage(document)
-            //            addContent(document);
+            
             document.close()
         } catch (e: Exception) {
             e.printStackTrace()

@@ -10,15 +10,9 @@ class MessageDraw(var dataStream: DataStream) : JPanel() {
         val message = dataStream.message
         println("The max height: $maxHeight")
 
-        // if (maxWidth > maxHeight) {
-        // maxWidth = (int) (maxHeight * 0.8);
-        // }
         val eachSignalBitWidth = maxWidth / message!!.length.toDouble()
-
-//        if (eachSignalBitWidth > maxHeight * 0.8) {
-//            eachSignalBitWidth = (maxHeight * 0.8) / message.length();
-//        }
         println("Each Signal Bit Width: $eachSignalBitWidth")
+
         val startingPoint = DoubleArray(2)
         val endingPoint = DoubleArray(2)
         endingPoint[0] = 0.0
@@ -28,12 +22,15 @@ class MessageDraw(var dataStream: DataStream) : JPanel() {
         for (i in 0 until message.length) {
             val presentBit = message[i]
             upp = presentBit == '1'
+
             if (presentBit == previousBit) {
                 startingPoint[0] = endingPoint[0]
                 startingPoint[1] = endingPoint[1]
                 endingPoint[0] = endingPoint[0] + eachSignalBitWidth
+
                 val firstCoordinate = doubleArrayOf(startingPoint[0], startingPoint[1])
                 val secondCoordinate = doubleArrayOf(endingPoint[0], endingPoint[1])
+
                 listOfCoordinates.add(firstCoordinate)
                 listOfCoordinates.add(secondCoordinate)
             } else {
@@ -41,15 +38,20 @@ class MessageDraw(var dataStream: DataStream) : JPanel() {
                 startingPoint[0] = endingPoint[0]
                 startingPoint[1] = endingPoint[1]
                 endingPoint[1] = endingPoint[1] + bitWidth
+
                 val firstCoordinate = doubleArrayOf(startingPoint[0], startingPoint[1])
                 val secondCoordinate = doubleArrayOf(endingPoint[0], endingPoint[1])
+
                 listOfCoordinates.add(firstCoordinate)
                 listOfCoordinates.add(secondCoordinate)
+                
                 startingPoint[0] = endingPoint[0]
                 startingPoint[1] = endingPoint[1]
                 endingPoint[0] = endingPoint[0] + eachSignalBitWidth
+
                 val thirdCoordinate = doubleArrayOf(startingPoint[0], startingPoint[1])
                 val fourthCoordinate = doubleArrayOf(endingPoint[0], endingPoint[1])
+
                 listOfCoordinates.add(thirdCoordinate)
                 listOfCoordinates.add(fourthCoordinate)
             }
@@ -62,18 +64,27 @@ class MessageDraw(var dataStream: DataStream) : JPanel() {
         super.paintComponent(g)
         val g2 = g as Graphics2D
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON)
+
         val maxWidth = width
         val maxHeight = height
+
         generateMessage(maxWidth, maxHeight)
+
         g2.color = Color.BLACK
         g2.stroke = GRAPH_STROKE
+
         var counter = 0
+
         println("Size:" + listOfCoordinates.size)
+
         for (coordinate in listOfCoordinates) {
             val list = doubleArrayOf(coordinate[0], coordinate[1] + maxHeight * 0.8)
+
             listOfCoordinates[counter] = list
+
             println(listOfCoordinates[counter][0])
             println(listOfCoordinates[counter][1])
+
             counter++
         }
         println(listOfCoordinates.size)
@@ -82,6 +93,7 @@ class MessageDraw(var dataStream: DataStream) : JPanel() {
             val x2 = listOfCoordinates[i][0].toInt()
             val y1 = listOfCoordinates[i - 1][1].toInt()
             val y2 = listOfCoordinates[i][1].toInt()
+            
             g2.drawLine(x1, y1, x2, y2)
         }
     }

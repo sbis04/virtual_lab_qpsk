@@ -167,9 +167,6 @@ class LoginPage {
                     JOptionPane.showMessageDialog(mainFrame, "Email ID is already registered. Please try to login.", "Error",
                             JOptionPane.ERROR_MESSAGE)
                 }
-
-                // For retrieving user info
-                // sqlUtil.getUserLoginInfo();
             }
         }
     }
